@@ -1,30 +1,32 @@
-import java.util.Scanner;
- 
-public class student
-{
-      public static void main(String args[])
-      {
-          String name;
-          int roll, math, phy, eng;
-           
-          Scanner scan=new Scanner(System.in);
-           
-          System.out.print("Enter Name: ");
-          name=scan.nextLine();
-          System.out.print("Enter Roll Number: ");
-          roll=scan.nextInt();
-          System.out.print("Enter marks in Maths, Physics and English: ");
-          math=scan.nextInt();
-          phy=scan.nextInt();
-          eng=scan.nextInt();
-           
-          int total=math+eng+phy;
-          float perc=(float)total/300*100;
-           
-          System.out.println("Roll Number:" + roll +"\tName: "+name);
-          System.out.println("Marks (Maths, Physics, English): " +math+","+phy+","+eng);
-          System.out.println("Total: "+total +"\tPercentage: "+perc);
-            scan.close();
-      }
-          
+// Student.java
+class Student {
+    // Attributes
+    private String name;
+    private int age;
+    private String studentId;
+
+    // Constructor
+    public Student(String name, int age, String studentId) {
+        this.name = name;
+        this.age = age;
+        this.studentId = studentId;
+    }
+
+    // Method to display student details
+    public void displayDetails() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Student Age: " + age);
+        System.out.println("Student ID: " + studentId);
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        // Create a Student object
+        Student student = new Student("John Doe", 20, "S12345");
+
+        // Display student details
+        student.displayDetails();
+    }
 }
